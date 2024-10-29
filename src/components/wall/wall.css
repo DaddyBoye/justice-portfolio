@@ -1,0 +1,72 @@
+:root {
+  --brick-color: #1e1e1f;
+  --brick-border-radius: 2px;
+  --brick-width: 20%;
+  --brick-height: 6vw;
+  --brick-space: 4px;
+  --brick-side-space: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.brick {
+  background: var(--brick-color);
+  width: var(--brick-width);
+  height: var(--brick-height);
+  border-radius: var(--brick-border-radius);
+  margin: var(--brick-space);
+}
+
+.row {
+  display: flex;
+  background: #9d9d9d;
+}
+
+.row:first-child .brick {
+  margin-top: var(--brick-side-space);
+}
+
+.row:last-child .brick {
+  margin-bottom: var(--brick-side-space);
+}
+
+.row:nth-child(even) .brick:first-child {
+  display: none;
+}
+
+.row:nth-child(even) .brick:last-child {
+  margin-right: var(--brick-space);
+}
+
+.row:nth-child(even)::before,
+.row:nth-child(even)::after {
+  position: relative;
+  content: "";
+}
+
+.row:nth-child(even)::before {
+  margin-left: var(--brick-side-space);
+  width: calc(var(--brick-width) / 2);
+  height: var(--brick-height);
+  background: var(--brick-color); /* Add styles for pseudo-elements */
+}
+
+.row:nth-child(even)::after {
+  margin-right: var(--brick-side-space);
+  width: calc(var(--brick-width) / 2);
+  height: var(--brick-height);
+  background: var(--brick-color); /* Add styles for pseudo-elements */
+}
+
+.brick:last-child {
+  margin-right: var(--brick-side-space);
+}
+
+.brick:first-child {
+  margin-left: var(--brick-side-space);
+}
+
