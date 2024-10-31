@@ -2,7 +2,7 @@
   max-width: 1280px;
   height: 400px;
   overflow-y: scroll;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   margin: 1rem auto;
   margin-top: 60px;
   border: 2px solid #b7b7b7;
@@ -43,7 +43,6 @@
   grid-column-end: 4;
 }
 
-
 /* New media query for mobile screens */
 @media (max-width: 768px) {
   .wall-container {
@@ -55,6 +54,10 @@
     grid-template-columns: repeat(8, 12.5%);
     overflow-x: auto; /* Enable horizontal scroll inside the brick container */
     width: 950px; /* Keep the original size */
+  }
+
+  .brick > div {
+    min-height: 130px;
   }
 
   .brick::-webkit-scrollbar {
