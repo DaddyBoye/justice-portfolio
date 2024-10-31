@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import "./wall.css";
 
 const formatDate = (date) => {
@@ -109,85 +109,45 @@ const Wall = () => {
             <span>Sign On My Wall</span>
           </button>
         </form>
-        <div class="container mt-12">
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-          <div class="row">
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-            <div class="brick"></div>
-          </div>
-        </div>
+        <div class="scroll-container">
+  <div class="wall-container">
+    <div class="brick">
+      <div>Brick 1</div>
+      <div>Brick 2</div>
+      <div>Brick 3</div>
+      <div>Brick 4</div>
+      <div>Brick 5</div>
+      <div>Brick 6</div>
+      <div>Brick 7</div>
+      <div>Brick 8</div>
+      <div>Brick 9</div>
+      <div>Brick 10</div>
+      <div>Brick 11</div>
+      <div>Brick 12</div>
+      <div>Brick 13</div>
+      <div>Brick 14</div>
+      <div>Brick 15</div>
+      <div>Brick 16</div>
+      <div>Brick 17</div>
+      <div>Brick 18</div>
+      <div>Brick 19</div>
+      <div>Brick 20</div>
+      <div>Brick 21</div>
+      <div>Brick 22</div>
+      <div>Brick 23</div>
+      <div>Brick 24</div>
+      <div>Brick 25</div>
+      <div>Brick 26</div>
+      <div>Brick 27</div>
+      <div>Brick 28</div>
+      <div>Brick 29</div>
+      <div>Brick 30</div>
+      <div>Brick 31</div>
+      <div>Brick 32</div>
+    </div>
+  </div>
+</div>
+
       </section>
     </article>
   );

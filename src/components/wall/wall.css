@@ -1,72 +1,63 @@
-:root {
-  --brick-color: #1e1e1f;
-  --brick-border-radius: 2px;
-  --brick-width: 20%;
-  --brick-height: 6vw;
-  --brick-space: 4px;
-  --brick-side-space: 8px;
+.wall-container {
+  max-width: 1280px;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+  margin: 1rem auto;
+  margin-top: 60px;
+  border: 2px solid #b7b7b7;
+  scrollbar-width: none;
+  border-radius: 10px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.brick {
-  background: var(--brick-color);
-  width: var(--brick-width);
-  height: var(--brick-height);
-  border-radius: var(--brick-border-radius);
-  margin: var(--brick-space);
-}
-
-.row {
-  display: flex;
-  background: #9d9d9d;
-}
-
-.row:first-child .brick {
-  margin-top: var(--brick-side-space);
-}
-
-.row:last-child .brick {
-  margin-bottom: var(--brick-side-space);
-}
-
-.row:nth-child(even) .brick:first-child {
+.wall-container::-webkit-scrollbar {
   display: none;
 }
 
-.row:nth-child(even) .brick:last-child {
-  margin-right: var(--brick-space);
+.brick {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  box-sizing: border-box;
+  color: #b7b7b7;
+  background: #1e1e1f;
 }
 
-.row:nth-child(even)::before,
-.row:nth-child(even)::after {
-  position: relative;
-  content: "";
+.brick > div {
+  background: #1e1e1f;
+  border-right: none;
+  grid-column: span 2;
+  min-height: 110px;
+  border: 2px solid #b7b7b7;
+  place-content: center;
+  display: grid;
+  border-radius: 5px;
 }
 
-.row:nth-child(even)::before {
-  margin-left: var(--brick-side-space);
-  width: calc(var(--brick-width) / 2);
-  height: var(--brick-height);
-  background: var(--brick-color); /* Add styles for pseudo-elements */
+.brick > div:nth-child(7n + 5),
+.brick > div:nth-child(7n + 6),
+.brick > div:nth-child(7n + 7) {
+  background: #1e1e1f;
 }
 
-.row:nth-child(even)::after {
-  margin-right: var(--brick-side-space);
-  width: calc(var(--brick-width) / 2);
-  height: var(--brick-height);
-  background: var(--brick-color); /* Add styles for pseudo-elements */
+.brick > div:nth-child(7n + 5) {
+  grid-column-end: 4;
 }
 
-.brick:last-child {
-  margin-right: var(--brick-side-space);
-}
 
-.brick:first-child {
-  margin-left: var(--brick-side-space);
-}
+/* New media query for mobile screens */
+@media (max-width: 768px) {
+  .wall-container {
+    overflow: scroll; /* Enable both vertical and horizontal scroll */
+  }
 
+  .brick {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    overflow-x: auto; /* Enable horizontal scroll inside the brick container */
+    width: 950px; /* Keep the original size */
+  }
+
+  .brick::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for aesthetics, if desired */
+  }
+}
