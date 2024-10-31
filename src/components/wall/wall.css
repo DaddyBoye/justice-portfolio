@@ -53,11 +53,11 @@
     display: grid;
     grid-template-columns: repeat(8, 12.5%);
     overflow-x: auto; /* Enable horizontal scroll inside the brick container */
-    width: 950px; /* Keep the original size */
+    width: 1200px; /* Keep the original size */
   }
 
   .brick > div {
-    min-height: 130px;
+    min-height: 165px;
   }
 
   .brick::-webkit-scrollbar {
