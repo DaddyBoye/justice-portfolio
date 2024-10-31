@@ -1,0 +1,12 @@
+/* SnackbarComponent.css */
+.snackbar-success {
+  background-color: #1e1e1f !important;
+  color: #04d2f7 !important;
+  border: 1px solid #04d2f7 !important;
+}
+
+.snackbar-error {
+  background-color: #1e1e1f !important;
+  color: #ff0000 !important;
+  border: 1px solid #ff0000 !important;
+}
