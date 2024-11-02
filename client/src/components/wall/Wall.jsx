@@ -79,7 +79,7 @@ const Wall = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("http://localhost:3000/fetchMessages/");
+      const response = await fetch("https://eyarko-server.onrender.com/fetchMessages/");
       const data = await response.json();
       if (data.status) {
         setMessages(data.success);
@@ -102,7 +102,7 @@ const Wall = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/createMessage/", {
+      const response = await fetch("https://eyarko-server.onrender.com/createMessage/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,10 +1,10 @@
+import { useEffect } from "react";
 import "./App.css";
 import {
   createBrowserRouter,
   Route,
   createRoutesFromElements,
   RouterProvider,
-  Navigate,
 } from "react-router-dom";
 
 // Pages
@@ -14,7 +14,7 @@ import Error404 from "./pages/error/Error404";
 // Layout
 import RouteLayout from "./layouts/RouteLayout.jsx";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import styles
 
 // Create routes
@@ -28,6 +28,17 @@ const routes = createBrowserRouter(
 );
 
 function App() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetch("https://eyarko-server.onrender.com")
+        .then((res) => res.json())
+        .then((data) => console.log("Server awake:", data))
+        .catch((err) => console.error("Error waking up server:", err));
+    }, 2000); // 2-second delay
+
+    return () => clearTimeout(timer); // Cleanup timeout if component unmounts
+  }, []);
+
   return ( 
     <>
       <ToastContainer />
