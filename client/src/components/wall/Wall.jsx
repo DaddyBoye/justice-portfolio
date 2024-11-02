@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
@@ -66,6 +67,7 @@ const Wall = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [modalData, setModalData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (name && name[0] !== "@") {
@@ -79,7 +81,9 @@ const Wall = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("https://eyarko-server.onrender.com/fetchMessages/");
+      const response = await fetch(
+        "https://eyarko-server.onrender.com/fetchMessages/"
+      );
       const data = await response.json();
       if (data.status) {
         setMessages(data.success);
@@ -101,14 +105,18 @@ const Wall = () => {
       message,
     };
 
+    setLoading(true);
     try {
-      const response = await fetch("https://eyarko-server.onrender.com/createMessage/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://eyarko-server.onrender.com/createMessage/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         notify("Thank You !!! 😁", "success");
@@ -120,6 +128,7 @@ const Wall = () => {
       console.error(error);
       notify("Sorry. Please try again 😥", "error");
     } finally {
+      setLoading(false);
       setName("");
       setMessage("");
     }
@@ -172,9 +181,20 @@ const Wall = () => {
             />
           </div>
 
-          <button className="form-btn" type="submit" data-form-btn>
-            <ion-icon name="pencil"></ion-icon>
-            <span>Sign On My Wall</span>
+          <button
+            className="form-btn"
+            type="submit"
+            data-form-btn
+            disabled={loading}
+          >
+            {loading ? (
+              <ClipLoader size={24} color="hsl(189, 97%, 49%)" loading={loading} />
+            ) : (
+              <div className="flex items-center gap-2">
+                <ion-icon name="pencil"></ion-icon>
+                <span>Sign On My Wall</span>
+              </div>
+            )}
           </button>
         </form>
         <div class="scroll-container">
