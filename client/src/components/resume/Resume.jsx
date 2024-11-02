@@ -1,5 +1,24 @@
 import React from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
+import {
+  FaPython,
+  FaReact,
+  FaNode,
+  FaHtml5,
+  FaCss3Alt,
+  FaJava,
+  FaPhp,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiFlutter,
+  SiDjango,
+  SiCplusplus,
+  SiExpress,
+} from "react-icons/si";
+import SkillCard from "./SkillCard";
 
 const Resume = () => {
   return (
@@ -23,39 +42,24 @@ const Resume = () => {
         <ol className="timeline-list">
           <li className="timeline-item">
             <h4 className="h4 timeline-item-title">
-              University school of the arts
+              University of Mines and Technology, SRID
             </h4>
 
-            <span>2007 — 2008</span>
+            <span>2022 — 2025</span>
 
             <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-              delenit atque corrupti, quos dolores et quas molestias exceptur.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">New york academy of art</h4>
-
-            <span>2006 — 2007</span>
-
-            <p className="timeline-text">
-              Ratione voluptatem sequi nesciunt, facere quisquams facere menda
-              ossimus, omnis voluptas assumenda est omnis..
+              BSc. Computer Science and Engineering
             </p>
           </li>
 
           <li className="timeline-item">
             <h4 className="h4 timeline-item-title">
-              High school of art and design
+              Aggrey Memorial A.M.E Zion Senior High School
             </h4>
 
-            <span>2002 — 2004</span>
+            <span>2018 — 2021</span>
 
-            <p className="timeline-text">
-              Duis aute irure dolor in reprehenderit in voluptate, quila
-              voluptas mag odit aut fugit, sed consequuntur magni dolores eos.
-            </p>
+            <p className="timeline-text">General Science</p>
           </li>
         </ol>
       </section>
@@ -71,87 +75,87 @@ const Resume = () => {
 
         <ol className="timeline-list">
           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Creative director</h4>
+            <h4 className="h4 timeline-item-title">
+              Intern, Software Engineer
+            </h4>
 
-            <span>2015 — Present</span>
+            <p className="timeline-text">Amalitech</p>
+
+            <span>October 2024 — November 2024</span>
 
             <p className="timeline-text">
-              Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit
-              atque corrupti, quos dolores et qvuas molestias exceptur.
+              Collaborated with team players to design, develop, and deploy
+              software solutions, while honing my skills in Agile development
+              methodologies and industry-standard best practices.
             </p>
           </li>
 
           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Art director</h4>
+            <h4 className="h4 timeline-item-title">Software Engineer</h4>
 
-            <span>2013 — 2015</span>
+            <p className="timeline-text">Ekke Ltd.</p>
+
+            <span>2022 — 2024</span>
 
             <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-              delenit atque corrupti, quos dolores et quas molestias exceptur.
+              Developed and maintained responsive, scalable, and secure web
+              applications that meet client expectations.
             </p>
           </li>
 
           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Web designer</h4>
+            <h4 className="h4 timeline-item-title">
+              Intern, Software Engineer
+            </h4>
 
-            <span>2010 — 2013</span>
+            <p className="timeline-text">Soso Care</p>
+
+            <span>November 2022 — January 2023</span>
 
             <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-              delenit atque corrupti, quos dolores et quas molestias exceptur.
+              Contributed to the development of USSD systems for Soso Care,
+              working closely with senior developers to ensure seamless
+              operations.
             </p>
           </li>
         </ol>
       </section>
 
+      <section className="download-resume flex justify-between w-full mb-8">
+        <a href="/resume/resume.pdf" download className="form-btn ml-0">
+          <button>Download Full Resume</button>
+        </a>
+      </section> 
+
       <section className="skill">
-        <h3 className="h3 skills-title">My skills</h3>
+        <h3 className="h3 skills-title">My Tech Stack</h3>
 
-        <ul className="skills-list content-card">
-          <li className="skills-item">
-            <div className="title-wrapper">
-              <h5 className="h5">Web design</h5>
-              <data value="80">80%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{width: "80%"}}></div>
-            </div>
-          </li>
-
-          <li className="skills-item">
-            <div className="title-wrapper">
-              <h5 className="h5">Graphic design</h5>
-              <data value="70">70%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "70%" }}></div>
-            </div>
-          </li>
-
-          <li className="skills-item">
-            <div className="title-wrapper">
-              <h5 className="h5">Branding</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "90%" }}></div>
-            </div>
-          </li>
-
-          <li className="skills-item">
-            <div className="title-wrapper">
-              <h5 className="h5">WordPress</h5>
-              <data value="50">50%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "50%" }}></div>
-            </div>
-          </li>
+        <ul className="skills-list ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <SkillCard icon={<FaReact />} name="React" color="#61dafb" />
+            <SkillCard icon={<FaNode />} name="Node.js" color="#68a063" />
+            <SkillCard icon={<FaPython />} name="Python" color="#3572a5" />
+            <SkillCard
+              icon={<SiJavascript />}
+              name="JavaScript"
+              color="yellow"
+            />
+            <SkillCard icon={<FaJava />} name="Java" color="orange" />
+            <SkillCard icon={<FaHtml5 />} name="HTML5" color="#e34c26" />
+            <SkillCard icon={<FaCss3Alt />} name="CSS3" color="#264de4" />
+            <SkillCard icon={<SiExpress />} name="Express" color="gray" />
+            <SkillCard icon={<SiMongodb />} name="MongoDB" color="#4DB33D" />
+            <SkillCard icon={<SiMysql />} name="MySQL" color="#00758F" />
+            <SkillCard icon={<SiFlutter />} name="Flutter" color="#02569B" />
+            <SkillCard icon={<SiCplusplus />} name="C++" color="#00599C" />
+            <SkillCard icon={<FaPhp />} name="PHP" color="#777BB4" />
+            <SkillCard icon={<SiDjango />} name="Django" color="#092E20" />
+            <SkillCard
+              icon={<FaCss3Alt />}
+              name="TailwindCSS"
+              color="#0ea5e9"
+            />
+          </div>
         </ul>
       </section>
     </article>
