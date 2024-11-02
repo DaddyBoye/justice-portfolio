@@ -14,8 +14,8 @@ import Error404 from "./pages/error/Error404";
 // Layout
 import RouteLayout from "./layouts/RouteLayout.jsx";
 
-// Snackbar
-import { SnackbarProvider } from 'notistack';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import styles
 
 // Create routes
 const routes = createBrowserRouter(
@@ -28,16 +28,11 @@ const routes = createBrowserRouter(
 );
 
 function App() {
-  return (
-    <SnackbarProvider
-      maxSnack={3}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'right',
-      }}
-    >
+  return ( 
+    <>
+      <ToastContainer />
       <RouterProvider router={routes} />
-    </SnackbarProvider>
+    </>
   );
 }
 

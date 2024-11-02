@@ -43,6 +43,21 @@
   grid-column-end: 4;
 }
 
+.custom-toast {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.custom-toast.success {
+  border-left: 5px solid hsl(189, 97%, 49%);
+}
+
+.custom-toast.error {
+  border-left: 5px solid rgb(245, 59, 59);
+}
+
+
 /* New media query for mobile screens */
 @media (max-width: 768px) {
   .wall-container {

@@ -1,8 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { useSnackbar } from "notistack";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
 import BrickModal from "./BrickModal";
 import "./wall.css";
+
+const notify = (message, status) => {
+  const backgroundColors = {
+    success: "#282829",
+    error: "#282829",
+  };
+
+  toast(message, {
+    position: "bottom-right",
+    className: `custom-toast ${status}`,
+    hideProgressBar: true,
+    style: {
+      backgroundColor: backgroundColors[status] || "#333",
+      color: "#fff",
+    },
+  });
+};
 
 function TruncateText({ text }) {
   // Check if the text length is greater than 90
@@ -44,9 +62,9 @@ const formatTime = (date) => {
 };
 
 const Wall = () => {
-  const { enqueueSnackbar } = useSnackbar();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
   const [modalData, setModalData] = useState(null);
 
   useEffect(() => {
@@ -59,76 +77,60 @@ const Wall = () => {
     setName(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const fetchMessages = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/fetchMessages/");
+      const data = await response.json();
+      if (data.status) {
+        setMessages(data.success);
+      } else {
+        console.error("Failed to fetch messages");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const currentDate = new Date();
-    console.log(
-      JSON.stringify(
-        {
-          name,
-          date: formatDate(currentDate),
-          time: formatTime(currentDate),
-          message,
+    const data = {
+      name,
+      date: formatDate(currentDate),
+      time: formatTime(currentDate),
+      message,
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/createMessage/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        null,
-        2
-      )
-    );
-    // Show snackbar on form submit
-    enqueueSnackbar("Operation completed successfully.", {
-      variant: "error",
-    });
-    setName("");
-    setMessage("");
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        notify("Thank You !!! 😁", "success");
+        fetchMessages();
+      } else {
+        notify("Sorry. Please try again 😥", "error");
+      }
+    } catch (error) {
+      console.error(error);
+      notify("Sorry. Please try again 😥", "error");
+    } finally {
+      setName("");
+      setMessage("");
+    }
   };
 
   const openModal = (testimonial) => setModalData(testimonial);
   const closeModal = () => setModalData(null);
 
-  const messages = [
-    {
-      id: 1,
-      date: "20th October, 2024",
-      time: "8:00 PM",
-      name: "@lawsonbuabassah",
-      message: "Richard was hired to create a corporate identity.",
-    },
-    {
-      id: 2,
-      date: "10th November, 2024",
-      time: "10:00 AM",
-      name: "@jamesbrown",
-      message: "Thank you for the help.",
-    },
-    {
-      id: 3,
-      date: "20th November, 2024",
-      time: "12:00 PM",
-      name: "@sarahjones",
-      message: "I hope you're doing well.",
-    },
-    {
-      id: 4,
-      date: "15th December, 2024",
-      time: "2:00 PM",
-      name: "@johndoe",
-      message: "I need your help with my project.",
-    },
-    {
-      id: 5,
-      date: "20th December, 2024",
-      time: "8:00 PM",
-      name: "@janedoe",
-      message: "I'm grateful for your help.",
-    },
-    {
-      id: 6,
-      date: "25th December, 2024",
-      time: "12:00 PM",
-      name: "@jimmy",
-      message: "I hope you have a great holiday.",
-    },
-  ];
+  useEffect(() => {
+    fetchMessages();
+  }, []);
 
   const additionalBricks = messages.length < 32 ? 32 - messages.length : 0;
 
@@ -187,11 +189,17 @@ const Wall = () => {
                 >
                   <TruncateText text={message.message} />
                   <div className="flex flex-col mt-2">
-                    <h4 className="text-[15px] md:text-[11px]" data-testimonials-title>
+                    <h4
+                      className="text-[15px] md:text-[11px]"
+                      data-testimonials-title
+                    >
                       {message.name}
                     </h4>
                     <div>
-                      <h4 className="text-[15px] md:text-[11px]" data-testimonials-title>
+                      <h4
+                        className="text-[15px] md:text-[11px]"
+                        data-testimonials-title
+                      >
                         {message.date} at {message.time}
                       </h4>
                     </div>
