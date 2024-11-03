@@ -5,22 +5,26 @@ import Resume from '../resume/Resume';
 import Projects from '../projects/Projects';
 import Blogs from '../blog/Blogs';
 import Wall from '../wall/Wall';
+import ProjectDescription from '../projects/ProjectDescription';
 
 const MainContainer = () => {
-  // Initialize active page state
   const [activePage, setActivePage] = useState('About');
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
 
-  // Function to render content based on active page
+  // Function to render content based on active page or selected project
   const renderContent = () => {
-    console.log("Current active page:", activePage);
+    if (selectedProjectId) {
+      return <ProjectDescription projectId={selectedProjectId} onBack={() => setSelectedProjectId(null)} />;
+    }
+    
     switch (activePage) {
       case 'About':
         return <About />;
       case 'Resume':
         return <Resume />;
       case 'Projects':
-        return <Projects />;
-      case 'Blog':
+        return <Projects onSelectProject={setSelectedProjectId} />;
+      case 'Blog': 
         return <Blogs />;
       case 'Wall':
         return <Wall />;
@@ -29,11 +33,16 @@ const MainContainer = () => {
     }
   };
 
+  // Clear selected project and set active page
+  const handlePageChange = (page) => {
+    setSelectedProjectId(null);  // Clear selected project when navigating
+    setActivePage(page);          // Set the new active page
+  };
+
   return (
     <div className="main-content">
-      {/* Pass setActivePage to NavBar to handle page switching */}
-      <NavBar onPageChange={setActivePage} />
-      {renderContent()} {/* Only display the content of the active page */}
+      <NavBar onPageChange={handlePageChange} />
+      {renderContent()} 
     </div>
   );
 };

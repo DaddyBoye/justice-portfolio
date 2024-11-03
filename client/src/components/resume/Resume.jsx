@@ -129,9 +129,7 @@ const Resume = () => {
 
       <section className="skill">
         <h3 className="h3 skills-title">My Tech Stack</h3>
-
-        <ul className="skills-list ">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             <SkillCard icon={<FaReact />} name="React" color="#61dafb" />
             <SkillCard icon={<FaNode />} name="Node.js" color="#68a063" />
             <SkillCard icon={<FaPython />} name="Python" color="#3572a5" />
@@ -156,7 +154,6 @@ const Resume = () => {
               color="#0ea5e9"
             />
           </div>
-        </ul>
       </section>
     </article>
   );

@@ -10,6 +10,7 @@ import {
 // Pages
 import Home from "./pages/home/Home";
 import Error404 from "./pages/error/Error404";
+import ProjectDescription from "./components/projects/ProjectDescription";
 
 // Layout
 import RouteLayout from "./layouts/RouteLayout.jsx";

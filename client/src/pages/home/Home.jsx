@@ -9,4 +9,4 @@ const Home = () => {
   </main>;
 }
 
-export default Home
+export default Home 
