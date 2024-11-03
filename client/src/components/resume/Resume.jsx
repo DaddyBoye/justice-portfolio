@@ -122,7 +122,7 @@ const Resume = () => {
       </section>
 
       <section className="download-resume flex justify-between w-full mb-8">
-        <a href="/resume/resume.pdf" download className="form-btn ml-0">
+        <a href="/resume/Lawson-Buabassah.pdf" download className="form-btn ml-0">
           <button>Download Full Resume</button>
         </a>
       </section> 
