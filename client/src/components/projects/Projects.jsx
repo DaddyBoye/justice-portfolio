@@ -26,7 +26,7 @@ const Projects = ({ onSelectProject }) => {
 
       <section className="projects">
         <ul className="filter-list">
-          {["all", "Web Apps", "Mobile Apps", "Robotics", "AI"].map(
+          {["All", "Web App", "Mobile App", "Robotics", "AI"].map(
             (category) => (
               <li className="filter-item" key={category}>
                 <button

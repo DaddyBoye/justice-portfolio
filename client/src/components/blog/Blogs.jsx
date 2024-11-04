@@ -51,7 +51,7 @@ const Blogs = () => {
             ))}
           </ul>
         ) : (
-          <p className='text-white'>Sorry. Haven't written any blog posts yet.</p>
+          <p className='text-white'>Sorry. Haven't written any blog post yet.</p>
         )}
       </section>
     </article>

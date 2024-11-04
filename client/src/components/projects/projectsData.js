@@ -2,7 +2,7 @@ const projectsData = [
   {
     "id": 1,
     "title": "Tutorium",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "image": "/images/tutorium.png",
     "description": "Tutorium is an upcoming mobile platform designed to empower students by transforming their knowledge and skills into a source of income. Through Tutorium, students will be able to offer affordable, on-demand tutorial services to peers on their campus, creating a supportive learning community while earning an income. Set for launch in 2025, Tutorium represents my first startup venture and aims to make quality education more accessible and collaborative within university environments.",
     "techStack": [
@@ -40,8 +40,8 @@ const projectsData = [
       },
       {
         "name": "Emmanuel Hudson",
-        "image": "https://avatars.githubusercontent.com/HudsonAdjety",
-        "githubLink": "https://github.com/HudsonAdjety"
+        "image": "https://avatars.githubusercontent.com/HudsonAdjetey",
+        "githubLink": "https://github.com/HudsonAdjetey"
       },
       {
         "name": "Boakye Oduro Samuel",
@@ -135,7 +135,7 @@ const projectsData = [
   {
     "id": 3,
     "title": "Sphir",
-    "category": "Web Apps",
+    "category": "Web App",
     "image": "/images/sphir.png",
     "description": "Sphir is currently in development, and while details are still under wraps, I'm sure the project image might hint at what’s to come. This innovative endeavor will soon offer something truly unique. Stay tuned for more as Sphir prepares to unveil its exciting features!",
     "techStack": [
@@ -275,7 +275,7 @@ const projectsData = [
   {
     "id": 6,
     "title": "Schedo",
-    "category": "Web Apps",
+    "category": "Web App",
     "image": "/images/schedo.png",
     "githubRepository": "https://github.com/Law-son/schedo-frontend",
     "description": "Schedo is a Content Management System for streamlined event scheduling, developed during my internship at AmaliTech as I honed my skills in Django. Schedo simplifies event planning by allowing users to schedule events effortlessly, automatically adding them to their calendar with timely reminders. The platform also supports user registration, enabling attendees to easily sign up for events. Designed for efficiency, Schedo is a versatile tool for managing and promoting events in one place.",
@@ -302,7 +302,7 @@ const projectsData = [
   {
     "id": 7,
     "title": "EcoSave",
-    "category": "Web Apps",
+    "category": "Web App",
     "image": "/images/ecosave.png",
     "liveDemo": "https://abedepele.vercel.app/",
     "description": "EcoSave is a circular economy platform that incentivizes environmental responsibility by allowing users to exchange plastic waste for cash. By turning waste into value, EcoSave encourages sustainable habits and supports a cleaner, greener environment, making eco-friendly practices accessible and rewarding for all.",
@@ -359,7 +359,7 @@ const projectsData = [
   {
     "id": 8,
     "title": "ACSES Voting Platform",
-    "category": "Web Apps",
+    "category": "Web App",
     "image": "/images/acses-voting.png",
     "liveDemo": "https://acses-e-voting-frontend.vercel.app/",
     "description": "ACSES Voting Platform is a secure online voting service developed for the Association of Computer Science and Engineering Students during my tenure as Vice President. This platform streamlines the voting process by offering secure voter registration, an intuitive voting experience, and real-time vote counting. Designed with reliability and transparency in mind, ACSES Voting Platform ensures a smooth and trustworthy election process for the association",
@@ -378,6 +378,11 @@ const projectsData = [
         "name": "Express",
         "icon": "/icons/express.svg",
         "color": "#000000"
+      },
+      {
+        "name": "React",
+        "icon": "/icons/react.svg",
+        "color": "#61dafb"
       }
     ],
     "contributors": [
@@ -403,8 +408,8 @@ const projectsData = [
       },
       {
         "name": "Theophilus Amihere Junior",
-        "image": "https://avatars.githubusercontent.com/snrraptopack@github",
-        "githubLink": "https://github.com/snrraptopack@github"
+        "image": "https://avatars.githubusercontent.com/snrraptopack",
+        "githubLink": "https://github.com/snrraptopack"
       }
     ]
   },
