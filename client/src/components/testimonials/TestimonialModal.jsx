@@ -49,14 +49,14 @@ function TestimonialModal({ data, onClose }) {
 
         <div className="modal-img-wrapper">
           <figure className="modal-avatar-box">
-            <img src={data.avatar} alt={data.name} width="80" data-modal-img />
+            <img src={data.avatar} alt={data.name} className="rounded-xl" width="80" data-modal-img />
           </figure>
           <img src="/images/icon-quote.svg" alt="quote icon" />
         </div>
 
         <div className="modal-content">
           <h4 className="h3 modal-title">{data.name}</h4>
-          <time dateTime="2021-06-14">14 June, 2021</time>
+          <p style={{ color: 'hsl(189, 97%, 49%)' }} className="text-sm mb-2">{data.title}</p>
           <div>
             <p>{data.text}</p>
           </div>
