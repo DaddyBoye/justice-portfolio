@@ -29,14 +29,14 @@ function Testimonials() {
       avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQFZF5wz0gbd7A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718888620926?e=1736380800&v=beta&t=-wLXCg3e5-kaC5ZhPDBjiCM306KZ7ROHgPi82J1-Jkk',
       name: 'Lois Young',
       title: 'CSR Team Lead at AmaliTech',
-      text: 'Lawson was hired to create a corporate identity. We were very pleased with the work done. He is a very good designer and he is very good at what he does.',
+      text: 'Lawson demonstrated strong skills in both backend and frontend development during his internship with us. He delivered high quality work with efficiency and expertise. I will recommend him for any opportunity based on his technical expertise, dedication and positive approach.',
     }
   ];
 
 
   return (
     <section className="testimonials">
-      <h3 className="h3 testimonials-title">Testimonials</h3>
+      <h3 className="h3 testimonials-title">Recommendations</h3>
 
       <ul className="testimonials-list has-scrollbar">
         {testimonials.map((testimonial) => (
