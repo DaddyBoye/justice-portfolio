@@ -22,7 +22,7 @@ function Testimonials() {
       avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQFnlL7BTmPSNA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726118203445?e=1736380800&v=beta&t=1stlt-IVlEjeAPSycrN_jmNbHC0YsSagKUmkGoaOPDs',
       name: 'John Arthur',
       title: 'Founder at ERA AXIS',
-      text: 'I had the pleasure of working closely with Lawson in a group setting, and he is one of the most capable and dedicated individuals I’ve encountered. His extensive project development experience and programming skills make him an invaluable team asset. Beyond his technical abilities, Lawson is an excellent communicator and collaborator, offering insightful perspectives and mentoring others. His enthusiasm for learning inspires those around him, fostering a productive environment. Lawson’s blend of technical skill, leadership, and vision makes him exceptionally suited for career advancement, and I highly recommend him as a talented and forward-thinking developer and leader.',
+      text: 'I had the pleasure of working closely with Lawson in a group setting, and he is one of the most capable and dedicated individuals I’ve encountered. His extensive project development experience and programming skills make him an invaluable team asset. Beyond his technical abilities, Lawson is an excellent communicator and collaborator, offering mentorship to others. I highly recommend him as a talented and forward-thinking developer and leader.',
     },
     {
       id: 3,
