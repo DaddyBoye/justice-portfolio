@@ -4,7 +4,6 @@ const projectsData = [
     "title": "Tutorium",
     "category": "Mobile App",
     "image": "/images/tutorium.png",
-    "liveDemo": "https://schedo.vercel.app/",
     "description": "Tutorium is an upcoming mobile platform designed to empower students by transforming their knowledge and skills into a source of income. Through Tutorium, students will be able to offer affordable, on-demand tutorial services to peers on their campus, creating a supportive learning community while earning an income. Set for launch in 2025, Tutorium represents my first startup venture and aims to make quality education more accessible and collaborative within university environments.",
     "techStack": [
       {
@@ -279,6 +278,7 @@ const projectsData = [
     "category": "Web App",
     "image": "/images/schedo.png",
     "githubRepository": "https://github.com/Law-son/schedo-frontend",
+    "liveDemo": "https://schedo.vercel.app/",
     "description": "Schedo is a Content Management System for streamlined event scheduling, developed during my internship at AmaliTech as I honed my skills in Django. Schedo simplifies event planning by allowing users to schedule events effortlessly, automatically adding them to their calendar with timely reminders. The platform also supports user registration, enabling attendees to easily sign up for events. Designed for efficiency, Schedo is a versatile tool for managing and promoting events in one place.",
     "techStack": [
       {
