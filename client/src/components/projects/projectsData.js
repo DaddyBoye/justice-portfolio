@@ -4,6 +4,7 @@ const projectsData = [
     "title": "Tutorium",
     "category": "Mobile App",
     "image": "/images/tutorium.png",
+    "liveDemo": "https://schedo.vercel.app/",
     "description": "Tutorium is an upcoming mobile platform designed to empower students by transforming their knowledge and skills into a source of income. Through Tutorium, students will be able to offer affordable, on-demand tutorial services to peers on their campus, creating a supportive learning community while earning an income. Set for launch in 2025, Tutorium represents my first startup venture and aims to make quality education more accessible and collaborative within university environments.",
     "techStack": [
       {
