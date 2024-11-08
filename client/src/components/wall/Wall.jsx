@@ -141,7 +141,19 @@ const Wall = () => {
     fetchMessages();
   }, []);
 
-  const additionalBricks = messages.length < 32 ? 32 - messages.length : 0;
+  function calculateNextTarget(currentLength) {
+    let target = 32;
+    let addThree = true;
+
+    while (target < currentLength) {
+        target += addThree ? 3 : 4;
+        addThree = !addThree;
+    }
+
+    return target;
+  }
+
+  const additionalBricks = calculateNextTarget(messages.length) - messages.length;
 
   return (
     <article className="wall active" data-page="wall">
@@ -188,7 +200,11 @@ const Wall = () => {
             disabled={loading}
           >
             {loading ? (
-              <ClipLoader size={24} color="hsl(189, 97%, 49%)" loading={loading} />
+              <ClipLoader
+                size={24}
+                color="hsl(189, 97%, 49%)"
+                loading={loading}
+              />
             ) : (
               <div className="flex items-center gap-2">
                 <ion-icon name="pencil"></ion-icon>
